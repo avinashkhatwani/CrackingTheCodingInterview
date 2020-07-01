@@ -7,7 +7,7 @@ package weekThreeStacksAndQueues;
  * 3 Discs - Now we can use the generalized n-1 formula i.e.
  * 			Move 2 Discs from A->B, 1 Disc from A->C and then the two remaining from B->C */
 
-public class Q6TowerOfHanoi {
+public class Q4TowerOfHanoi {
 
 	static void TOH(int n, int A, int B, int C) {
 		if(n>0) {

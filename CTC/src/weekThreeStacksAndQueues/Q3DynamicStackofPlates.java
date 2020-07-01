@@ -15,7 +15,7 @@ package weekThreeStacksAndQueues;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class Q5DynamicStackofPlates {
+public class Q3DynamicStackofPlates {
 
 	static int capacity = 5;
 	static ArrayList<Integer> ptr = new ArrayList<>();
