@@ -113,7 +113,10 @@ public class Q3GetNextAndPrev {
 		System.out.println();
 		System.out.println(a + ": " + Integer.toBinaryString(a));
 		int c = GetPrevious_NP(a);
-		System.out.println("Prev number with same numbe of 1's "+c + ": " + Integer.toBinaryString(c));	
+		System.out.println("Prev number with same numbe of 1's "+c + ": " + Integer.toBinaryString(c));
+		
+		
+		System.out.println("1 - 3= "+(3-1));
 	}
 
 
