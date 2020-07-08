@@ -1,7 +1,7 @@
 package weekSevelObjectOrientedDesign;
 
 public class Q2Employee {
-	Q2CallHandeler callHandeler;
+	static Q2CallHandeler callHandeler= new Q2CallHandeler();
 	int id;
 	int rank;
 	boolean avilable;
@@ -12,6 +12,7 @@ public class Q2Employee {
 	}
 	
 	public void recieveCall() {
+		System.out.println("Call is being taken by employee of rank "+this.rank);
 		avilable = false;
 	}
 	
@@ -22,6 +23,7 @@ public class Q2Employee {
 	}
 	
 	public void cannotHandle(Call call) {
+		System.out.println("This emp cannot handle this call");
 		this.avilable = true;
 		call.rank +=1;
 		callHandeler.dispatchCall(call);
@@ -47,3 +49,4 @@ class ProductManager extends Q2Employee{
 		super(2);
 	}
 }
+

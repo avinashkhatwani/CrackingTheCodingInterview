@@ -28,6 +28,10 @@ public class Q2CallHandeler {
 		employeeLevels = new ArrayList[3];
 		callLevelQueue = new LinkedList[3];
 		
+		for(int i=0; i<3; i++) {
+			callLevelQueue[i] = new LinkedList<>();
+		}
+		
 		ArrayList<Q2Employee> freshers = new ArrayList<Q2Employee>();
 		for(int i=0; i<5; i++) {
 			Fresher fresher = new Fresher();
@@ -47,27 +51,28 @@ public class Q2CallHandeler {
 	}
 	
 	Q2Employee assignEmployee(Call call) {
+		
 		int rank = call.rank;
-		for(int level=rank; level<3; level++) {
-			ArrayList<Q2Employee> empLevelList = employeeLevels[level];
+			ArrayList<Q2Employee> empLevelList = employeeLevels[rank];
 			for(Q2Employee emp: empLevelList) {
 				if(emp.avilable)
 					return emp;
 			}
-		}
 		return null;
+		
 	}
 	
-	void dispatchCall(Call call) {
+	Q2Employee dispatchCall(Call call) {
 		Q2Employee emp = assignEmployee(call);
 		if(emp!=null) {
 			emp.recieveCall();
-			return;
+			return emp;
 		}
 		int curCallRank = call.rank;
+		System.out.println("Representative not available, adding to queue");
 		Queue<Call> queueCallLevel = callLevelQueue[curCallRank];
 		queueCallLevel.add(call);
-		
+		return null;
 	}
 	
 	void getNextCall(Q2Employee emp) {
